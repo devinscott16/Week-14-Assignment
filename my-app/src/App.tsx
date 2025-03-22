@@ -1,16 +1,24 @@
-import FoodCard from "./FoodCard";
 import FoodList from "./FoodList";
 import NavBar from "./NavBar";
-import Buttons from "./Buttons";
 
 export default function App() {
   return (
-    <div>
-      App
-      <NavBar />
-      <FoodList />
-      <FoodCard />
-      <Buttons />
+    <div
+      style={{
+        backgroundImage: "url(/background%20Image.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
+        height: "100vh",
+        width: "100vw",
+        overflow: "hidden",
+      }}
+    >
+      <div className="container-fluid">
+        <NavBar />
+        <div className="d-flex">
+          <FoodList />
+        </div>
+      </div>
     </div>
   );
 }
