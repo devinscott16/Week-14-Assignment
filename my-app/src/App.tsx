@@ -10,7 +10,7 @@ export default function App() {
         backgroundPosition: "center center",
         height: "100vh",
         width: "100vw",
-        overflow: "hidden",
+        overflowY: "auto",
       }}
     >
       <div className="container-fluid">
