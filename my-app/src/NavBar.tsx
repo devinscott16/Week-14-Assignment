@@ -1,10 +1,20 @@
-export default function NavBar() {
+import Container from "react-bootstrap/Container";
+import Navbar from "react-bootstrap/Navbar";
+import Button from "react-bootstrap/Button";
+
+interface NavBarProps {
+  addFoodItem: () => void; // Type
+}
+
+export default function NavBar({ addFoodItem }: NavBarProps) {
   return (
-    <div className="navbar bg-body-tertiary">
-      <div className="container-fluid">
-        <span className="navbar-brand mb-0 h1"></span>
-        <textarea className="form-control" defaultValue="NavBar Testing" />
-      </div>
-    </div>
+    <Navbar className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="#home">Add Your Recipe</Navbar.Brand>
+        <Button variant="outline-primary" size="lg" onClick={addFoodItem}>
+          Click here to Add
+        </Button>
+      </Container>
+    </Navbar>
   );
 }
