@@ -1,24 +1,15 @@
 interface ButtonsProps {
-  // set type for props
   toggleEdit: () => void;
-  deleteFoodItem: () => void; // Function to delete the card
+  deleteButton: React.ReactNode;
 }
 
-export default function Buttons({ toggleEdit, deleteFoodItem }: ButtonsProps) {
+export default function Buttons({ toggleEdit, deleteButton }: ButtonsProps) {
   return (
-    <div className="d-flex justify-content-end position-absolute bottom-0 end-0 p-2">
-      <button
-        className="btn btn-outline-primary btn-sm"
-        onClick={toggleEdit} // Toggle edit mode
-      >
+    <div className="d-flex justify-content-end gap-1">
+      <button className="btn btn-outline-primary btn-sm" onClick={toggleEdit}>
         Edit
       </button>
-      <button
-        className="btn btn-danger btn-sm ms-2"
-        onClick={deleteFoodItem} // Call the delete function
-      >
-        Delete
-      </button>
+      {deleteButton}
     </div>
   );
 }

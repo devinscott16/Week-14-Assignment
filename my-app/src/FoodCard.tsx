@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DeleteFoodModal from "./modals/DeleteFoodModal";
 import Buttons from "./Buttons";
 
 interface FoodCardProps {
@@ -19,6 +20,7 @@ export default function FoodCard({
   //sets the state for the text
   const [text, setText] = useState(description);
   const [isEditing, setIsEditing] = useState(false); //sets the state for edit button
+  const [showModal, setShowModal] = useState(false); //adds the Modal State
 
   const toggleEdit = () => {
     setIsEditing((prev) => !prev);
@@ -62,8 +64,15 @@ export default function FoodCard({
 
         <div className="mt-3">
           <Buttons
-            toggleEdit={toggleEdit} // Pass edit button function
-            deleteFoodItem={() => deleteFoodItem(id)} // Pass delete button function
+            toggleEdit={toggleEdit}
+            deleteButton={
+              <DeleteFoodModal
+                show={showModal}
+                handleShow={() => setShowModal(true)}
+                handleClose={() => setShowModal(false)}
+                handleDelete={() => deleteFoodItem(id)}
+              />
+            }
           />
         </div>
       </div>
