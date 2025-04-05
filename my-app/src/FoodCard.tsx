@@ -63,10 +63,10 @@ export default function FoodCard({
         )}
 
         <div className="mt-3">
-          <Buttons
+          <Buttons //Keeping Edit button as is
             toggleEdit={toggleEdit}
             deleteButton={
-              <DeleteFoodModal
+              <DeleteFoodModal //Activates Modal when clickling Delete
                 show={showModal}
                 handleShow={() => setShowModal(true)}
                 handleClose={() => setShowModal(false)}
