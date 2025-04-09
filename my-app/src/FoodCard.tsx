@@ -1,20 +1,15 @@
 import { useState } from "react";
 import DeleteFoodModal from "./modals/DeleteFoodModal";
 import Buttons from "./Buttons";
+import { MasterType } from "./types";
 
 interface FoodCardProps {
-  imageSrc: string;
-  altText: string;
-  description: string;
-  id: number;
-  deleteFoodItem: (id: number) => void; // Function to delete the card
+  item: MasterType;
+  deleteFoodItem: (id: string) => void; // Function to delete the card
 }
 
 export default function FoodCard({
-  imageSrc,
-  altText,
-  description,
-  id,
+  item: { imageSrc, altText, description, id },
   deleteFoodItem,
 }: FoodCardProps) {
   //sets the state for the text
